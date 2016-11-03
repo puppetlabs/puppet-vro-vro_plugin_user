@@ -1,4 +1,5 @@
-class vrosudo {
+class plugin_user {
+
   user { 'puppet-vro-plugin':
     ensure   => present,
     comment  => 'VRO Plugin User',
@@ -13,4 +14,5 @@ class vrosudo {
     group   => 'root',
     content => epp('vrosudo/vro.epp'),
   }
+
 }
