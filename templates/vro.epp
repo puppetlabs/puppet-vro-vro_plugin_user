@@ -1,0 +1,7 @@
+vro ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet node purge *
+vro ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge *[[\:blank\:]]*
+vro ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet config print *
+vro ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet config print *[[\:blank\:]]*
+vro ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet agent -t
+vro ALL = (root) NOPASSWD: /bin/xargs /bin/kill -HUP
+vro ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge <%= $facts[fqdn] %>
