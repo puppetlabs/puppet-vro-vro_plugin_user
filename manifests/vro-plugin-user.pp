@@ -1,5 +1,5 @@
 class profile::vro-plugin-user (
-  String $vro-plugin-user = 'vro-plugin-user',
+  String $vro_plugin_user = 'vro-plugin-user',
   String $vro_password = 'puppetlabs',
   String $vro_password_hash = '$1$Fq9vkV1h$4oMRtIjjjAhi6XQVSH6.Y.', #puppetlabs
   #String $vro_home_dir = "/home/${vro-plugin-user}",
@@ -7,8 +7,8 @@ class profile::vro-plugin-user (
   #String $vro_key_file = "${vro_key_dir}/id.rsa",
   #String $vro_token_dir = "${vro_home_dir}/.puppetlabs",
   #String $vro_token_file = "${vro_token_dir}/token",
-  String $root_token_dir = '/root/.puppetlabs',
-  String $root_token_file = "${root_token_dir}/token",
+  #String $root_token_dir = '/root/.puppetlabs',
+  #String $root_token_file = "${root_token_dir}/token",
 ) {
   # vro user's ssh keys
   #file { $vro_key_dir:

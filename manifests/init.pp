@@ -3,7 +3,7 @@
 
 class vro_plugin_user {
 
-  user { 'vro-plugin-user':
+  user { 'vro_login_user':
     ensure   => present,
     comment  => 'VRO Plugin User',
     shell    => '/bin/bash',
