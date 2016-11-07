@@ -1,3 +1,8 @@
+##/vro_plugin_user/manifests/vro-plugin-user.pp
+## VRO Plugin user gets created here as well as assigned RBAC privileges,
+## as well as the /etc/sudoers.d/vro-plugin-user file, with the allowed
+## and disallowed commands required to manage/purge node certificates.
+
 class plugin_user (
   String $vro_plugin_user = 'vro-plugin-user',
   String $vro_password = 'puppetlabs',
@@ -22,7 +27,7 @@ class plugin_user (
     creates => '/opt/puppetlabs/puppet/cache/vro_plugin_user_created',
   }
 
-##Creates system user.
+##Create system user.
 
   user { $vro_plugin_user:
     ensure   => present,
