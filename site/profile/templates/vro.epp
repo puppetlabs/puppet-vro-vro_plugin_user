@@ -4,4 +4,6 @@ vro ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet config print *
 vro ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet config print *[[\:blank\:]]*
 vro ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet agent -t
 vro ALL = (root) NOPASSWD: /bin/xargs /bin/kill -HUP
-vro ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge <%= $facts[fqdn] %>
+vro ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge <%= $trusted[certname] %>
+vro ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge pe-internal-mcollective-serverse
+vro ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge pe-internal-peadmin-mcollective-client
