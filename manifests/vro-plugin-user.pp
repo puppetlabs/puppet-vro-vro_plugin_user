@@ -4,7 +4,7 @@ class plugin_user (
   String $vro_password_hash = '$1$Fq9vkV1h$4oMRtIjjjAhi6XQVSH6.Y.', #puppetlabs
  ){
 
-  $ruby_mk_vro_plugin_user = epp('profile/create_user_role.rb.epp', {
+  $ruby_mk_vro_plugin_user = epp('vro_plugin_user/create_user_role.rb.epp', {
     'username'    => $vro_plugin_user,
     'password'    => $vro_password,
     'rolename'    => 'VRO User to clean removed nodes,
@@ -38,6 +38,6 @@ class plugin_user (
     mode    => '0440',
     owner   => 'root',
     group   => 'root',
-    content => epp('profile/vro-sudoer-file.epp'),
+    content => epp('plugin_user/vro_sudoer_file.epp'),
   }
 }
