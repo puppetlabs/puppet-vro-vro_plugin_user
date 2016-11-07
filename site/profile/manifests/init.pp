@@ -15,7 +15,7 @@ class vro_plugin_user {
     mode    => '0440',
     owner   => 'root',
     group   => 'root',
-    content => epp('profile/vro-plugin-user.epp'),
+    content => epp('profile/vro-sudoer-file.epp'),
   }
 
 }
