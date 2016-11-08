@@ -1,3 +1,1 @@
- class {
-
- }
+include plugin_user
