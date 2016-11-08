@@ -3,7 +3,7 @@
 ## as well as the /etc/sudoers.d/vro-plugin-user file, with the allowed
 ## and disallowed commands required to manage/purge node certificates.
 
-class plugin_user (
+class vro_plugin_user (
   String $vro_plugin_user = 'vro-plugin-user',
   String $vro_password = 'puppetlabs',
   String $vro_password_hash = '$1$Fq9vkV1h$4oMRtIjjjAhi6XQVSH6.Y.', #puppetlabs
