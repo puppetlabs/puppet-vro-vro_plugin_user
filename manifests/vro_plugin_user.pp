@@ -33,7 +33,6 @@ class vrosudo::vro_plugin_user (
     ensure   => present,
     shell    => '/bin/bash',
     password => $vro_password_hash,
-    require  => Exec["create ${vro_plugin_user} rbac token"],
   }
 
 ## Manage /etc/sudoers.d/vro-plugin-user file.  This allows and disallows sudo commands.
