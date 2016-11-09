@@ -1,3 +1,7 @@
+## /etc/sudoers.d/vro-plugin-user
+## This file allows the vro-plugin-user to remove nodes that are destroyed in VRO/VRA
+## This file also disallows the vro-plugin-user from removing the Master and other PE Internal certs.
+
 vro ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet node purge *
 vro ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge *[[\:blank\:]]*
 vro ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet config print *
