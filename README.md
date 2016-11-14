@@ -8,7 +8,7 @@
 
 ## Description
 
-Manages the sudoers commands for the vro-plugin-user.  This allows VMware VRO/VRA to remove and destroy a node, with limited elevated privilege commands. Used in conjunction with other VRO/VRA modules
+Manages the sudoers commands for the vro-plugin-user.  This allows VMware VRO/VRA to purge a Puppet node, with limited elevated privilege commands.
 
 ## Usage
 This module is part of the larger VMware VRO/VRA Plugin. When the VRO Plugin is setup this module creates the vro-plugin-user on the Puppet Master.
