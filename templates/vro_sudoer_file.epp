@@ -16,3 +16,9 @@ vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge pe
 ## Below are needed on agents to be provisioned with sudo user only
 #vro-plugin-user ALL = (root) NOPASSWD: /bin/mkdir -p /etc/puppetlabs/facter/facts.d
 #vro-plugin-user ALL = (root) NOPASSWD: /bin/tee /etc/puppetlabs/facter/facts.d/puppet_vra_facts.json
+#vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet config set environment *
+#vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet config set environment *[[\:blank\:]]*
+#vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet config set certname *
+#vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet config set certname *[[\:blank\:]]*
+#vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet config set server *
+#vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet config set server *[[\:blank\:]]*
