@@ -3,7 +3,6 @@
 ## This file also disallows the vro-plugin-user from removing the Master and other PE Internal certs.
 
 Defaults:vro-plugin-user !requiretty
-vro-plugin-user ALL = (root) NOPASSWD: [ -f /opt/puppetlabs/puppet/cache/state/agent_catalog_run.lock ]
 vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet node purge *
 vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge *[[\:blank\:]]*
 vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet config print *
@@ -18,15 +17,3 @@ vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge pe
 vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge pe-internal-peadmin-mcollective-client
 vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet resource service puppet ensure=stopped
 vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
-## Below are needed on agents to be provisioned with sudo user only
-#vro-plugin-user ALL = (root) NOPASSWD: /bin/mkdir -p /etc/puppetlabs/facter/facts.d
-#vro-plugin-user ALL = (root) NOPASSWD: /bin/tee /etc/puppetlabs/facter/facts.d/puppet_vra_facts.json
-#vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet config set environment *
-#vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet config set environment *[[\:blank\:]]*
-#vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet config set certname *
-#vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet config set certname *[[\:blank\:]]*
-#vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet config set server *
-#vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet config set server *[[\:blank\:]]*
-#vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
-#vro-plugin-user ALL = (root) NOPASSWD: /bin/hostnamectl set-hostname *
-#vro-plugin-user ALL = (root) NOPASSWD: !/bin/hostnamectl set-hostname *[[\:blank\:]]*
