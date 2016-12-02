@@ -14,7 +14,7 @@ vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet agent --test -
 vro-plugin-user ALL = (root) NOPASSWD: /bin/kill -HUP *
 vro-plugin-user ALL = (root) NOPASSWD: !/bin/kill -HUP *[[\:blank\:]]*
 vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge <%= $trusted[certname] %>
-vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge pe-internal-mcollective-serverse
+vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge pe-internal-mcollective-servers
 vro-plugin-user ALL = (root) NOPASSWD: !/opt/puppetlabs/bin/puppet node purge pe-internal-peadmin-mcollective-client
 vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet resource service puppet ensure=stopped
 vro-plugin-user ALL = (root) NOPASSWD: /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
